@@ -12,3 +12,17 @@ def enterProducts():
         else:
             print('Did not get that, A to add items or Q to quit')
     return buyingData
+
+def getPrice(item, quantity):
+    priceData = {
+        'Biscuit' : 3,
+        'Chicken' : 5,
+        'Egg' : 1,
+        'Coke' : 2,
+        'Bread' : 2,
+        'Apple' : 3,
+        'Onion' : 3
+    }
+    subtotal = priceData[item] * quantity
+    print(item + ': $' + str(priceData[item]) + ' x ' + str(quantity) + ' = ' + '$' + str(subtotal))
+    return subtotal
