@@ -44,4 +44,10 @@ def getDiscount(bill, member):
         print('No discount on amount less than $25')
     return bill
 
-getDiscount(30, 'Bronze')
+def makeBill (buyingData, member):
+    bill = 0
+    for key, value in buyingData.items():
+        bill += getPrice(key, value)
+    bill = getDiscount(bill, member)
+    print('The discounted amount is $' + str(bill))
+
