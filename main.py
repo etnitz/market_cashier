@@ -26,3 +26,22 @@ def getPrice(item, quantity):
     subtotal = priceData[item] * quantity
     print(item + ': $' + str(priceData[item]) + ' x ' + str(quantity) + ' = ' + '$' + str(subtotal))
     return subtotal
+
+def getDiscount(bill, member):
+    discount = 0
+    if bill >= 25:
+        if member == 'Gold':
+            bill = bill * .8
+            discount = 20
+        elif member == 'Silver':
+            bill = bill * .9
+            discount = 10
+        elif member == 'Bronze':
+            bill = bill * .95
+            discount = 5
+        print(str(discount) + '% off for ' + member + ' membership on total: $' + str(bill))
+    else:
+        print('No discount on amount less than $25')
+    return bill
+
+getDiscount(30, 'Bronze')
